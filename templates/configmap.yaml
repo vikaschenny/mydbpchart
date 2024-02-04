@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mydbpchart.fullname" . }}
+  namespace: {{ .Values.namespace }}
+data:
+  CONSUMER_BROKER_ADDRESS: >-
+    {{ .Values.consumerBrokerAddress }}
+  CONSUMER_SASL_JAAS_CONFIG: '{{ .Values.consumerSaslJaasConfig }}'
+  CONSUMER_SASL_MECHANISM: {{ .Values.consumerSaslMechanism }}
+  CONSUMER_SECURITY_PROTOCOL: '{{ .Values.consumerSecurityProtocol }}'
+  DEAD_LETTER_TOPIC: {{ .Values.deadLetterTopic }}
+  FAIL_APPLICATION_ON_ERROR: '{{ .Values.failApplicationOnError }}'
+  GOVERNANCE_URL: '{{ .Values.governanceUrl }}'
+  INPUT_TOPIC: {{ .Values.inputTopic }}
+  KAFKA_GROUP_ID: {{ .Values.kafkaGroupId }}
+  KAFKA_KEY_DESERIALIZER: {{ .Values.kafkaKeyDeserializer }}
+  KAFKA_VALUE_DESERIALIZER: {{ .Values.kafkaValueDeserializer }}
+  LOGGING_LEVEL: {{ .Values.loggingLevel }}
+  OUTPUT_TOPIC: {{ .Values.outputTopic }}
+  PRODUCER_BROKER_ADDRESS: >-
+    {{ .Values.producerBrokerAddress }}
+  TRANSFORM_CLASS_NAME: {{ .Values.transformClassName }}
+  SERVICE_PROPS_TABLE_NAME: {{ .Values.servicePropsTableName }}
+  SERVICE_PROPS_TYPE: {{ .Values.servicePropsType }}
+  SERVICE_PROPS_VALUE_COL: {{ .Values.servicePropsValueCol }}
+  SERVICE_PROPS_HOSTS: {{ .Values.servicePropsHosts }}
+  SERVICE_PROPS_KEY_COL: {{ .Values.servicePropsKeyCol }}
+  SERVICE_PROPS_KEYSPACE_NAME: {{ .Values.servicePropsKeyspaceName }}
+  SERVICE_PROPS_USERNAME: {{ .Values.servicePropsUsername }}
+  SERVICE_PROPS_PASSWORD: {{ .Values.servicePropsPassword }}
+  SERVICE_PROPS_ENABLED_DEVICES: {{ .Values.servicePropsEnabledDevices }}

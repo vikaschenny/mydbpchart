@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mydbpchart
+description: A Helm chart for dbp-dc-unification
+version: 0.1.0

@@ -104,7 +104,7 @@ spec:
   type: LoadBalancer
 ```
 
-3. Update `values.yaml` with your desired default values:
+3. Update `values.yaml` with your desired default values: it should be placed outside of the templates folder 
 
 ```yaml
 # values.yaml
